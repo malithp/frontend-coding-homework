@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { searchMovie, SearchResultsItem } from '../api/moviedb';
+import { getMovieDetail, searchMovie, SearchResultsItem } from '../api/moviedb';
 import '../styles/SearchBox.css';
 
 const SearchBox = () => {
@@ -24,7 +24,7 @@ const SearchBox = () => {
             <input placeholder="Search Movie" onChange={(event) => handleOnChange(event.target.value)} value={searchTerm}></input>
             <div id="searchResults">
                 { searchResults?.map((result, key) => (
-                    <div id={key.toString()}>
+                    <div id={key.toString()} onClick={() => getMovieDetail(result.id)}>
                         {result.title}
                     </div>
                 ))}
