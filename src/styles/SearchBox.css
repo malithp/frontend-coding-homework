@@ -1,0 +1,21 @@
+input {
+    height: 2rem;
+    width: 20rem;
+    margin-bottom: 10px;
+}
+
+#searchResults {
+    width: 20rem
+}
+
+#searchResults > div {
+    text-align: start;
+    padding-left: 10px;
+    padding-bottom: 1rem;
+    outline: gainsboro;
+    outline-style: auto;
+}
+
+#searchResults > div:hover {
+    cursor: pointer;
+}

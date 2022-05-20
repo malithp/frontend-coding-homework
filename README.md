@@ -1,50 +1,46 @@
-# Coding Homework
+# Getting Started with Create React App
 
-Hi there! This is a simple coding test from Spark Sport. We like you! And we would like to know more about you, now this stage you can demonstrate us your awesome coding skills! We writing code every day, now we want to know how you write code as well!
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-So, let's build a web application, that we can use to search for movies and display the detail of the movie!
+## Available Scripts
 
-This test should be completed using ReactJS and ideally Redux (but not compulsary).
+In the project directory, you can run:
 
-## Design / User flow
+### `npm start`
 
-Full flow can get here: https://xd.adobe.com/view/0b6f9418-1224-418c-b1bb-7fad2462bbe1-5e3c/
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### Home page
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-This is the home page of the app. With whatever you like to name this application and a search box.
+### `npm test`
 
-![home page](./home_page.png)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Search function
+### `npm run build`
 
-When typing something in the search box, it will list related result like the autocomplete you saw in Google search or any other search.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-No need to show all the results, probably just a few most related results should be enough.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-![search](./search_result.png)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Detail page
+### `npm run eject`
 
-Once you click a movie in the autocomplete drop-down list, will navigate you to the detail page, in this page, you might see the movie poster, title, actors etc. whatever other information you think you wish to have
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-![detail page](./detail_page.png)
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## API
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-We suggest that you can use [The Movie DB API](https://developers.themoviedb.org/3/getting-started), and you might need to [register](https://www.themoviedb.org/login) and create an API key for it.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-For search the movie with text, you can use this endpoint: https://developers.themoviedb.org/3/search/search-movies
+## Learn More
 
-For the detail of a movie, you can use this endpoint: https://developers.themoviedb.org/3/movies/get-movie-details
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-An example of the API call will be like this: https://api.themoviedb.org/3/search/movie?query={key_word}?&api_key={api_key}
-
-_If you have problem with API setup, local static data demo is also acceptable_
-
-## Some kind tips
-
-- We favour unit tested code, but not a must-have
-- Don't forget to create/update README to let us know how to set up and run your code.
-- You can branch this repo and complete work in your own branch.
-- No need to stress off, enjoy coding, be yourself and good luck!
+To learn React, check out the [React documentation](https://reactjs.org/).
