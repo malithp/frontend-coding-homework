@@ -89,7 +89,7 @@ export const searchMovie = async (query: string): Promise<SearchResultsItem[] | 
     return null;
 };
 
-export const getMovieDetail = async (movie_id: number): Promise<GetMovieResponse | null> => {
+export const getMovieDetail = async (movie_id: string): Promise<GetMovieResponse | null> => {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${apiKey}`);
     const movieResponse: GetMovieResponse = await response.json();
     if (response.ok) {
