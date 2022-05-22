@@ -162,7 +162,7 @@ export const getCredits = async(movie_id: string): Promise<CastEntity[] | undefi
   const creditsResponse: CreditsResponse = await response.json();
   if (response.ok) {
     const cast = creditsResponse.cast;
-    return cast?.sort((a,b) => b.popularity - a.popularity).slice(0, 5);
+    return cast?.sort((a,b) => b.popularity - a.popularity).slice(0, 10);
   }
   return undefined;
 };

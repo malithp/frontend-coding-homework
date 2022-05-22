@@ -46,9 +46,9 @@ const MovieDetails = () => {
                 <h1>{movieDetails?.title}</h1>
                 <div className="infoContainer">
                     <img src={`${config?.images.base_url}/w500/${movieDetails?.poster_path}`} alt="" width="300px"/>
-                    <div >
+                    <div style={{alignSelf: "center", height: "100%"}}>
                         <div className="infoDiv">
-                            <table>
+                            <table style={{height: "100%"}}>
                                 <tr>
                                     <td>Release Date:</td>
                                     <td className="tableData">{movieDetails?.release_date}</td>
