@@ -124,7 +124,10 @@ type SearchAction = {
 
 type SearchState = {
     searchTerm: string,
-    fetching: boolean
+    fetching: boolean,
+    selectedMovie?: GetMovieResponse,
+    credits?: CastEntity[],
+    config?: ConfigurationResponse,
     searchResults: SearchResultsItem[]
 }
 

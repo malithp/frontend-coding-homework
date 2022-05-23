@@ -8,7 +8,7 @@ export const searchMovie = async (query: string): Promise<SearchResultsItem[] | 
     if (response.ok) {
         const searchResults = results;
         console.log(searchResults);
-        return searchResults?.slice(0, 5);
+        return searchResults?.sort((a,b) => b.popularity - a.popularity).slice(0, 5);
     }
     return null;
 };
@@ -17,7 +17,6 @@ export const getMovieDetail = async (movie_id: string): Promise<GetMovieResponse
     const response = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${apiKey}`);
     const movieResponse: GetMovieResponse = await response.json();
     if (response.ok) {
-        console.log(movieResponse);
         return movieResponse;
     }
     return null;
