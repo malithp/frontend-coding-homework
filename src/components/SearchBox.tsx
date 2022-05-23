@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { getMovieDetail, searchMovie, SearchResultsItem } from '../api/moviedb';
+import { getMovieDetail, searchMovie } from '../api/moviedb';
+import { SearchResultsItem } from "../type";
 import '../styles/SearchBox.css';
 import { Navigate, useNavigate } from "react-router-dom";
 

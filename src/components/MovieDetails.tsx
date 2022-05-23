@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { CastEntity, ConfigurationResponse, CreditsResponse, CrewEntity, getConfiguration, getCredits, getMovieDetail, GetMovieResponse } from "../api/moviedb";
+import { CastEntity, ConfigurationResponse, GetMovieResponse } from "../type";
+import {getConfiguration, getCredits, getMovieDetail} from "../api/moviedb";
 import '../styles/MovieDetails.css';
-
-const Spacer = () => (
-    <div style={{width: "10%"}}></div>
-);
 
 const MovieDetails = () => {
     const [movieDetails, setMovieDetails] = useState<GetMovieResponse>();
@@ -45,7 +42,7 @@ const MovieDetails = () => {
             <div className="mainDiv">
                 <h1>{movieDetails?.title}</h1>
                 <div className="infoContainer">
-                    <img src={`${config?.images.base_url}/w500/${movieDetails?.poster_path}`} alt="" width="300px"/>
+                    <img src={`${config?.images.base_url}/w500/${movieDetails?.poster_path}`} alt="" width="300px" height="450px"/>
                     <div style={{alignSelf: "center", height: "100%"}}>
                         <div className="infoDiv">
                             <table style={{height: "100%"}}>

@@ -1,0 +1,3 @@
+const SEARCH_MOVIES = "SEARCH_MOVIES";
+
+export default {SEARCH_MOVIES};
