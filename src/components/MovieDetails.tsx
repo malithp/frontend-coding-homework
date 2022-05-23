@@ -1,17 +1,25 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { CastEntity, ConfigurationResponse, GetMovieResponse } from "../type";
 import {getConfiguration, getCredits, getMovieDetail} from "../api/moviedb";
 import '../styles/MovieDetails.css';
+import { fetchMovies, setIsFetching } from "../store/searchSlice";
+import { useDispatch } from "react-redux";
+import { AppDispatch, useSelector } from "../store";
 
 const MovieDetails = () => {
     const [movieDetails, setMovieDetails] = useState<GetMovieResponse>();
     const [config, setConfig] = useState<ConfigurationResponse>();
     const [cast, setCast] = useState<CastEntity[]>();
+    const dispatch = useDispatch<AppDispatch>();
+    const isFetching = useSelector((state) => state.searchReducer.fetching);
+    const searchResults = useSelector((state) => state.searchReducer.searchResults);
+    const navigate = useNavigate();
     let {id} = useParams();
     
     React.useEffect(() => {
         if (id) {
+            dispatch(setIsFetching(true));
             getMovieDetail(id)
             .then(response => {
                 if (response) {
@@ -23,9 +31,12 @@ const MovieDetails = () => {
             .then(response => {
                 if (response) {
                     setCast(response);
-                    console.log(response);
                 }
             })
+
+            if (searchResults.length < 1) {
+                if (movieDetails) dispatch(fetchMovies(movieDetails?.title.split(' ')[0]));
+            }
         }
         
         getConfiguration()
@@ -34,7 +45,12 @@ const MovieDetails = () => {
                 setConfig(response);
             }
         })
-    }, []);
+        dispatch(setIsFetching(false));
+    }, [id]);
+
+    if (isFetching){
+        <h1>Loading...</h1>
+    }
 
     return (
         <div className="detailsBody">
@@ -62,6 +78,17 @@ const MovieDetails = () => {
                                             ))}
                                     </td>
                                 </tr>
+                                { searchResults && searchResults.length > 0
+                                    ? <tr>
+                                        <td>Similar Titles:</td>
+                                        <td className="tableData">
+                                                {searchResults?.map(movie => (
+                                                    <div onClick={() => navigate(`/movie/${movie.id}`)}>{movie.title}</div>
+                                                ))}
+                                        </td>
+                                    </tr>
+                                    : null
+                                }
                             </table>
                         </div>
                     </div>
