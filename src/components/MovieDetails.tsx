@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { CastEntity, ConfigurationResponse, GetMovieResponse } from "../type";
-import {getConfiguration, getCredits, getMovieDetail} from "../api/moviedb";
 import '../styles/MovieDetails.css';
-import { fetchConfig, fetchCredits, fetchMovieDetails, fetchMovies, setIsFetching } from "../store/searchSlice";
+import { fetchConfig, fetchCredits, fetchMovieDetails } from "../store/searchSlice";
 import { useDispatch } from "react-redux";
 import { AppDispatch, useSelector } from "../store";
 

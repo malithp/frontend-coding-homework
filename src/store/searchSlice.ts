@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { stat } from "fs";
 import { RootState } from ".";
 import { getConfiguration, getCredits, getMovieDetail, searchMovie } from "../api/moviedb";
 import { SearchResultsItem, SearchState } from "../type";

@@ -1,10 +1,7 @@
-import { useState } from 'react';
-import { getMovieDetail, searchMovie } from '../api/moviedb';
-import { SearchResultsItem } from "../type";
 import '../styles/SearchBox.css';
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { fetchMovies, setSearchResults, setSearchTerm } from '../store/searchSlice';
+import { fetchMovies, setSearchTerm } from '../store/searchSlice';
 import { AppDispatch, useSelector } from "../store";
 
 const SearchBox = () => {
@@ -15,7 +12,6 @@ const SearchBox = () => {
     const searchTerm = useSelector((state) => state.searchReducer.searchTerm);
 
     const handleOnChange = (phrase: string) => {
-        console.log(phrase);
         dispatch(setSearchTerm(phrase));
         dispatch(fetchMovies(phrase));
     };

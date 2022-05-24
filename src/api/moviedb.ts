@@ -7,7 +7,6 @@ export const searchMovie = async (query: string): Promise<SearchResultsItem[] | 
     const {page, results, total_pages, total_results}: SearchResponse = await response.json();
     if (response.ok) {
         const searchResults = results;
-        console.log(searchResults);
         return searchResults?.sort((a,b) => b.popularity - a.popularity).slice(0, 5);
     }
     return null;
