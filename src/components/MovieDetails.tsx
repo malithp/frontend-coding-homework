@@ -60,7 +60,7 @@ const MovieDetails = () => {
                                         <td>Similar Titles:</td>
                                         <td className="tableData">
                                                 {searchResults?.map(movie => (
-                                                    <div onClick={() => navigate(`/movie/${movie.id}`)}>{movie.title}</div>
+                                                    <div className="relatedTitle" role="link" onClick={() => navigate(`/movie/${movie.id}`)}>{movie.title}</div>
                                                 ))}
                                         </td>
                                     </tr>

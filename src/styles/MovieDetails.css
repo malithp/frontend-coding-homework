@@ -70,5 +70,6 @@ td {
     flex-grow: 1;
 }
 
-.overviewContainer > div {
+.relatedTitle {
+    cursor: pointer;
 }
